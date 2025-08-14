@@ -1,0 +1,5 @@
+{
+  "name": "YKS Takip ve Koçluk",
+  "description": "A web application for students preparing for the YKS exam to track their progress, manage study plans, and receive AI-powered coaching and recommendations.",
+  "requestFramePermissions": []
+}

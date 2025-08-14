@@ -1,0 +1,366 @@
+import { Topic, Subject } from './types';
+
+export const ALL_SUBJECTS: Subject[] = Object.values(Subject);
+
+// TYT ve AYT Konuları
+export const SUBJECT_TOPICS: Record<Subject, string[]> = {
+  // TYT DERSLERİ
+  [Subject.TYT_TURKCE]: [
+    "Sözcükte Anlam",
+    "Cümlede Anlam", 
+    "Paragrafta Anlam",
+    "Yazım Kuralları",
+    "Noktalama İşaretleri",
+    "Fiilde Zaman",
+    "Fiilde Kip",
+    "Fiilde Çatı",
+    "Cümle Çeşitleri",
+    "Cümle Öğeleri",
+    "Kelime Türleri",
+    "Ses Bilgisi",
+    "Anlam İlişkileri",
+    "Dil Bilgisi"
+  ],
+  
+  [Subject.TYT_MATEMATIK]: [
+    "Temel Kavramlar",
+    "Sayı Basamakları",
+    "Bölme ve Bölünebilme",
+    "EBOB - EKOK",
+    "Rasyonel Sayılar",
+    "Basit Eşitsizlikler",
+    "Birinci Dereceden Denklemler", 
+    "Problemler",
+    "Kümeler",
+    "Kartezyen Çarpım",
+    "Bağıntı ve Fonksiyon",
+    "Fonksiyon Çeşitleri",
+    "Polinomlar",
+    "Çarpanlara Ayırma",
+    "İkinci Dereceden Denklemler",
+    "Eşitsizlik Sistemleri",
+    "Değer Mutlak",
+    "Oran-Orantı",
+    "Yüzdeler",
+    "Karmaşık Sayılar",
+    "2. Dereceden Fonksiyonlar",
+    "Permütasyon",
+    "Kombinasyon",
+    "Olasılık",
+    "İstatistik",
+    "Geometri ve Ölçme"
+  ],
+
+  [Subject.TYT_FEN]: [
+    // Fizik Konuları
+    "Fizik Bilimine Giriş",
+    "Madde ve Özellikleri", 
+    "Hareket",
+    "Kuvvet ve Hareket",
+    "İş, Güç, Enerji",
+    "İtme ve Momentum",
+    "Dalgalar",
+    "Optik",
+    "Elektrostatik",
+    "Elektrik Akımı",
+    // Kimya Konuları
+    "Kimya Bilimi",
+    "Atom ve Periyodik Sistem",
+    "Kimyasal Türler Arası Etkileşimler",
+    "Maddenin Halleri",
+    "Doğa ve Kimya",
+    "Karışımlar",
+    "Asit, Baz ve Tuz",
+    "Kimya Her Yerde",
+    // Biyoloji Konuları
+    "Canlıların Ortak Özellikleri",
+    "Hücre",
+    "Canlıların Çeşitliliği ve Sınıflandırılması",
+    "Sistem Fizyolojisi",
+    "Kalıtım",
+    "Ekosistem Ekolojisi ve Güncel Çevre Sorunları"
+  ],
+
+  [Subject.TYT_SOSYAL]: [
+    // Tarih Konuları
+    "Tarih Bilimi",
+    "İnsanlık Tarihi",
+    "Türk Tarihi",
+    "İslam Tarihi", 
+    "Osmanlı Tarihi",
+    "Yenilik ve Değişim",
+    "Milli Mücadele",
+    "Atatürk İlke ve İnkılâpları",
+    "Türkiye Cumhuriyeti Tarihi",
+    // Coğrafya Konuları
+    "Coğrafya Bilimi",
+    "Haritalar",
+    "Yeryüzünün Şekillenmesi",
+    "İklim",
+    "İç Dinamikler",
+    "Dış Dinamikler",
+    "Türkiye Coğrafyası",
+    "Çevre ve Toplum",
+    "Ekonomik Coğrafya",
+    "Şehir Coğrafyası",
+    "Nüfus Coğrafyası",
+    // Felsefe Konuları
+    "Felsefe Giriş",
+    "Felsefi Düşünce",
+    "Bilgi Felsefesi",
+    "Bilim Felsefesi",
+    "Ahlak Felsefesi",
+    "Siyaset Felsefesi",
+    "Sanat Felsefesi",
+    "Din Felsefesi"
+  ],
+
+  // AYT DERSLERİ
+  [Subject.AYT_MATEMATIK]: [
+    "Trigonometri", 
+    "Fonksiyonlar",
+    "Polinomlar",
+    "Logaritma",
+    "Diziler",
+    "Limit ve Süreklilik",
+    "Türev ve Uygulamaları",
+    "İntegral ve Uygulamaları",
+    "Analitik Geometri",
+    "Katı Cisimler",
+    "Uzayda Vektörler", 
+    "Koniklerin Analitik İncelenmesi",
+    "Çember ve Daire",
+    "Elips",
+    "Hiperbol",
+    "Parabol",
+    "Doğrusal Programlama",
+    "Sayılar Teorisi",
+    "Çarpanlara Ayırma",
+    "Rasyonel Fonksiyonlar"
+  ],
+
+  [Subject.AYT_FIZIK]: [
+    "Çembersel Hareket",
+    "Basit Harmonik Hareket", 
+    "Dalga Mekaniği",
+    "Optik",
+    "Modern Fizik",
+    "Atom Fiziği",
+    "Radioaktivite",
+    "Elektrik ve Manyetizma",
+    "Alternatif Akım",
+    "Elektromanyetik İndüksiyon",
+    "Elektromanyetik Dalgalar",
+    "Kuantum Fiziği",
+    "Görelilik",
+    "Astrofizik",
+    "Kondansatör",
+    "Manyetik Alan",
+    "Manyetik Kuvvet",
+    "İndüktans",
+    "Transformatör"
+  ],
+
+  [Subject.AYT_KIMYA]: [
+    "Modern Atom Teorisi",
+    "Periyodik Sistem",
+    "Kimyasal Bağlar", 
+    "Molekül Geometrisi",
+    "Kimyasal Tepkimeler",
+    "Kimyasal Hesaplamalar",
+    "Gazlar",
+    "Sıvılar",
+    "Katılar",
+    "Çözeltiler",
+    "Kimyasal Tepkimelerde Enerji",
+    "Kimyasal Tepkimelerde Hız",
+    "Kimyasal Denge",
+    "Asitler ve Bazlar",
+    "Çözünürlük Dengesi",
+    "Elektrokimya",
+    "Organik Kimyaya Giriş",
+    "Organik Bileşikler",
+    "Enerji Kaynakları ve Bilimsel Gelişmeler"
+  ],
+
+  [Subject.AYT_BIYOLOJI]: [
+    "Canlıların Temel Bileşenleri",
+    "Hücre Bölünmeleri",
+    "Kalıtım", 
+    "Canlıların Çeşitliliği",
+    "Bitki Biyolojisi",
+    "Hayvan Biyolojisi", 
+    "İnsan Vücudunda Sistemler",
+    "Sinir Sistemi",
+    "Duyu Organları",
+    "Endokrin Sistem",
+    "Destek ve Hareket Sistemi",
+    "Sindirim Sistemi",
+    "Dolaşım Sistemi",
+    "Solunum Sistemi",
+    "Boşaltım Sistemi",
+    "Üreme Sistemi",
+    "Bağışıklık Sistemi",
+    "Genden Proteine",
+    "Canlılarda Enerji Dönüşümleri",
+    "Popülasyon Ekolojisi"
+  ],
+
+  [Subject.AYT_TARIH]: [
+    "Osmanlı Devleti (1453-1600)",
+    "Osmanlı Devleti (1600-1774)",
+    "Osmanlı Devleti (1774-1839)",
+    "Osmanlı Devleti (1839-1876)", 
+    "Osmanlı Devleti (1876-1908)",
+    "Osmanlı Devleti (1908-1918)",
+    "I. Dünya Savaşı",
+    "Mütareke Dönemi",
+    "Millî Mücadele",
+    "Atatürk İlkeleri",
+    "İnkılâp Tarihi",
+    "Türkiye Cumhuriyeti (1923-1938)",
+    "Türkiye Cumhuriyeti (1938-1950)",
+    "Türkiye Cumhuriyeti (1950-1980)",
+    "Türkiye Cumhuriyeti (1980-2000)",
+    "Çağdaş Türkiye",
+    "XX. Yüzyıl Başında Osmanlı Devleti",
+    "Balkan Savaşları"
+  ],
+
+  [Subject.AYT_COGRAFYA]: [
+    "Türkiye'nin Konumu",
+    "Türkiye'nin İklimi",
+    "Türkiye'nin İç Suları",
+    "Türkiye'nin Bitki Örtüsü",
+    "Türkiye'nin Toprakları",
+    "Türkiye'nin Nüfus Özellikleri",
+    "Türkiye'nin Göçleri",
+    "Türkiye'nin Yerleşmeleri",
+    "Türkiye'nin Ekonomik Coğrafyası",
+    "Türkiye'nin Ulaşım Ağları",
+    "Türkiye'nin Turizm Coğrafyası",
+    "Türkiye'nin Çevre Sorunları",
+    "Doğal Afetler",
+    "Bölgesel Coğrafya",
+    "Marmara Bölgesi",
+    "Ege Bölgesi", 
+    "Akdeniz Bölgesi",
+    "İç Anadolu Bölgesi",
+    "Karadeniz Bölgesi",
+    "Doğu Anadolu Bölgesi",
+    "Güneydoğu Anadolu Bölgesi"
+  ],
+
+  [Subject.AYT_FELSEFE]: [
+    "Felsefeye Giriş",
+    "Felsefi Problemler",
+    "Felsefe Tarihi",
+    "Antik Çağ Felsefesi",
+    "Orta Çağ Felsefesi",
+    "Yeni Çağ Felsefesi",
+    "Çağdaş Felsefe",
+    "Doğu Felsefesi",
+    "İslam Felsefesi",
+    "Türk-İslam Filozofları",
+    "Metafizik",
+    "Epistemoloji",
+    "Ahlak Felsefesi",
+    "Estetik",
+    "Siyaset Felsefesi",
+    "Din Felsefesi",
+    "Dil Felsefesi",
+    "Bilim Felsefesi",
+    "Teknoloji Felsefesi",
+    "Çevre Felsefesi"
+  ],
+
+  [Subject.AYT_DIN]: [
+    "İnanç Esasları",
+    "İbadet",
+    "Ahlâk",
+    "Siyer",
+    "Kur'an",
+    "Hz. Muhammed",
+    "İslam Düşüncesinde İtikadî Mezhepler",
+    "İslam Düşüncesinde Fıkhî Mezhepler",
+    "Tasavvuf",
+    "İslam Tarihinde İlim",
+    "Günümüz Din Problemleri",
+    "Din Psikolojisi",
+    "Din Sosyolojisi",
+    "Dinler Tarihi",
+    "Yahudilik",
+    "Hristiyanlık",
+    "Uzak Doğu Dinleri",
+    "İlkel Dinler",
+    "Modern Çağda Din"
+  ],
+
+  [Subject.AYT_EDEBIYAT]: [
+    "Edebiyat Bilgisi",
+    "Metin Bilgisi",
+    "Söz Sanatları",
+    "Nazım Bilgisi",
+    "Edebî Türler",
+    "Hikâye",
+    "Roman", 
+    "Tiyatro",
+    "Deneme",
+    "Eleştiri",
+    "Şiir",
+    "Türk Edebiyatı Tarihi",
+    "İslamiyet Öncesi Türk Edebiyatı",
+    "İslami Dönem Türk Edebiyatı",
+    "Divan Edebiyatı",
+    "Halk Edebiyatı",
+    "Tanzimat Edebiyatı",
+    "Servet-i Fünun Edebiyatı",
+    "Millî Edebiyat",
+    "Cumhuriyet Dönemi Edebiyatı",
+    "Çağdaş Türk Edebiyatı"
+  ],
+
+  [Subject.AYT_DIGER_DILLER]: [
+    "İngilizce Grammar",
+    "İngilizce Vocabulary",
+    "İngilizce Reading Comprehension",
+    "İngilizce Writing",
+    "İngilizce Speaking",
+    "İngilizce Listening",
+    "Almanca Grundlagen",
+    "Almanca Grammatik",
+    "Almanca Wortschatz",
+    "Fransızca Grammaire",
+    "Fransızca Vocabulaire",
+    "Arapça Nahiv",
+    "Arapça Sarf",
+    "Arapça Metin"
+  ]
+};
+
+export const INITIAL_TOPICS: Topic[] = [];
+
+// StudyGuide için ders kategorileri  
+export const SUBJECT_CATEGORIES = {
+  TYT: [Subject.TYT_TURKCE, Subject.TYT_MATEMATIK, Subject.TYT_FEN, Subject.TYT_SOSYAL],
+  AYT: [Subject.AYT_MATEMATIK, Subject.AYT_FIZIK, Subject.AYT_KIMYA, Subject.AYT_BIYOLOJI, Subject.AYT_TARIH, Subject.AYT_COGRAFYA, Subject.AYT_FELSEFE, Subject.AYT_DIN, Subject.AYT_EDEBIYAT, Subject.AYT_DIGER_DILLER]
+};
+
+// Backwards compatibility için
+export interface TopicDetail {
+  id: string;
+  name: string;
+  description?: string;
+  difficulty?: "Kolay" | "Orta" | "Zor";
+  estimatedTime?: number;
+}
+
+export interface SubjectDetail {
+  subject: Subject;
+  examType: "TYT" | "AYT" | "Both";
+  description?: string;
+  topics: TopicDetail[];
+}
+
+// SUBJECT_DETAILS için boş array - StudyGuide'ı güncellemek için
+export const SUBJECT_DETAILS: SubjectDetail[] = [];
